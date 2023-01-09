@@ -1,7 +1,6 @@
 package com.pairlearning.expensetracker.resources;
 
 import com.pairlearning.expensetracker.Constants;
-import com.pairlearning.expensetracker.domain.Car;
 import com.pairlearning.expensetracker.domain.User;
 import com.pairlearning.expensetracker.services.UserService;
 import io.jsonwebtoken.Jwts;
@@ -24,7 +23,7 @@ public class UserResource {
     UserService userService;
 
     @GetMapping("/user")
-    public ResponseEntity<User> getCarById(HttpServletRequest request) {
+    public ResponseEntity<User> getUserById(HttpServletRequest request) {
         int userId = (Integer) request.getAttribute("userId");
         User user = userService.fetchUserById(userId);
         user.setPassword("***");
